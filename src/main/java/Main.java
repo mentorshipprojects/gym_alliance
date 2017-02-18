@@ -78,7 +78,7 @@ class Main {
 
         Main bill[] = new Main[countList];
 
-        int bill0;
+        int bill0=0;
 
         //визначення клієнта та робота з його замовленням
         Scanner scan1 = new Scanner(System.in);
@@ -93,7 +93,7 @@ class Main {
     //друк прайс-листа
                 System.out.println("На даний час можемо Вам запропонувати такі товари та послуги:");
                 for (int i=0; i < countList; i++) {
-                    System.out.print(priceList[i].nameList+" - "+priceList[i].priceList+"грн.;  ");
+                    System.out.println(i+"."+priceList[i].nameList+" - "+priceList[i].priceList+"грн.;  ");
                 }
                 System.out.println();
                 boolean err2;
@@ -108,7 +108,7 @@ class Main {
                         Scanner scan21 = new Scanner(System.in);
                         System.out.print("Вкажіть кількість продукту/послуги яку ви хочете придбати: ");
                         if (scan21.hasNextInt()) {
-                            bill0 = bill0 + scan2.nextInt()*scan21.nextInt();
+                            bill0 = bill0 + priceList[scan2.nextInt()]*scan21.nextInt();
                             Scanner scan3 = new Scanner(System.in);
                             System.out.print("Замовите ще щось? Введіть y/n: ");
                             switch (scan3.nextLine()) {
